@@ -1,0 +1,111 @@
+{{> head}}
+{{> top}}
+<main class="main page page--author">
+   <div class="main__left">
+      <div class="main__left-inner">
+         <div class="main__left-content">
+            {{#author}} 
+               <article>               
+                  <header class="page__header page--author__header">                     
+                     <div>
+                        <h1 class="page__title">
+                           {{name}}
+                           {{#if authorViewConfig.displayPostCounter}}<sup>({{postsNumber}})</sup>{{/if}}
+                        </h1>
+                        {{#if authorViewConfig.displayDescription}} 
+                           {{#if description}}
+                              <div class="page__desc">
+                                 {{{description}}}
+                              </div>
+                           {{/if}}
+                        {{/if}}
+                        {{#if authorViewConfig.displayWebsite}}  
+                           {{#if website}}
+                              <div class="page--author__website">
+                                 <svg height="20" width="20" aria-hidden="true" stroke="var(--primary-color)" stroke-width="2">
+                                    <use xlink:href="{{@website.assetsUrl}}/svg/svg-map.svg#website"/>
+                                 </svg>
+                                 <a href="{{website}}" class="invert" target="_blank" rel="nofollow noreferrer noopener">{{ translate 'author.visitWebsite' }}</a>
+                              </div>
+                           {{/if}}
+                        {{/if}}
+                     </div>
+                     {{#if authorViewConfig.displayAvatar}}
+                        {{#if avatar}}
+                           <img 
+                              src="{{avatarImage.url}}" 
+                              {{ lazyload "eager" }}
+                              height="{{avatarImage.height}}"
+                              width="{{avatarImage.width}}"
+                              class="page--author__avatar" 
+                              alt="{{avatarImage.alt}}">
+                        {{/if}}
+                     {{/if}}
+                  </header>
+                  {{#if authorViewConfig.displayPostList}} 
+                     <ul class="list">
+                        {{#each ../posts}}
+                           <li class="list__item {{#checkIfNone @config.custom.listingAuthorExcerpt}}list__item--thin{{/checkIfNone}}">
+                              <h3 class="list__item-title">
+                                 <a href="{{url}}" class="invert">
+                                    {{title}}
+                                 </a>
+                              </h3>
+                              <div class="list__item-meta">
+
+                                 {{#if @config.custom.listingAuthorDate}}
+                                    <span>
+                                       {{ translate 'post.published' }}
+                                       <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                                          {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                             {{date createdAt @config.custom.formatDate}}
+                                          {{else}}
+                                             {{date createdAt @config.custom.formatDateCustom}}
+                                          {{/checkIf}}
+                                       </time>
+                                    </span>
+                                 {{/if}}
+
+                                 {{#if @config.custom.listingAuthorCategory}}
+                                    {{#if mainTag}}
+                                       <a href="{{mainTag.url}}" class="invert">{{mainTag.name}}</a>
+                                    {{/if}}
+                                 {{/if}}
+
+                                 {{#if @config.custom.listingAuthorUpdate}}
+                                    <span>
+                                       {{ translate 'post.updated' }}
+                                       <time datetime="{{date modifiedAt 'YYYY-MM-DDTHH:mm'}}">
+                                          {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                             {{date modifiedAt @config.custom.formatDate}}
+                                          {{else}}
+                                             {{date modifiedAt @config.custom.formatDateCustom}}
+                                          {{/checkIf}}
+                                       </time>
+                                    </span>
+                                 {{/if}}
+
+                              </div>
+
+                              {{#if @config.custom.listingAuthorExcerpt}}
+                                 {{#if hasCustomExcerpt}}
+                                    {{{ excerpt }}}
+                                 {{else}}
+                                    <p class="list__item-excerpt">{{{ excerpt }}}</p>
+                                 {{/if}}
+                              {{/if}}
+                           </li>
+                        {{/each}}
+                     </ul>
+                  {{/if}}
+               </article>
+               {{#if authorViewConfig.displayPostList}} 
+                  {{> pagination}}
+               {{/if}}
+            {{/author}}
+         </div>
+      </div>
+   </div>
+   {{> sidebar}}
+</main>
+{{> footer}}

@@ -1,0 +1,42 @@
+{{> head}}
+{{> top}}
+<main class="main page page--tags">
+   <div class="main__left">
+      <div class="main__left-inner">
+         <div class="main__left-content">
+            <article>
+               <header class="page__header">
+                  <h1 class="page__title">
+                     {{ translate 'tags.tagsPageTitle' }}
+                     {{#if @config.custom.tagsCount}}
+                        <sup>({{tagsNumber}})</sup>
+                     {{/if}}
+                  </h1>                    
+                  <p class="page__desc">
+                     {{ translate 'tags.description' }}
+                  </p>
+               </header>
+               <ul class="list">
+                  {{#each tags}}
+                     <li class="list__item {{#checkIfNone @config.custom.listingTagsDescritpion}}list__item--thin{{/checkIfNone}}">
+                        <h3 class="list__item-title">
+                           <a href="{{url}}" class="invert">
+                              {{name}} 
+                              <sup>
+                                 ({{postsNumber}})
+                              </sup> 
+                           </a>
+                        </h3>
+                        {{#if @config.custom.listingTagsDescritpion}}
+                           {{{description}}}                 
+                        {{/if}}
+                     </li>
+                  {{/each}}
+               </ul>
+            </article>
+         </div>
+      </div>
+   </div>
+   {{> sidebar}}
+</main>
+{{> footer}}

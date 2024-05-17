@@ -1,0 +1,134 @@
+{{#getPost @config.custom.frontPost}}
+   <article class="post post--on-frontpage">
+      <header>
+         <h1 class="post__title">
+            {{title}}
+         </h1>
+      </header>
+      {{#if postViewConfig.displayFeaturedImage}}
+         {{#featuredImage}}
+            {{#if url}}
+               <figure class="post__featured-image">
+                  <img
+                     src="{{url}}"
+                     {{#if @config.site.responsiveImages}}
+                        {{responsiveImageAttributes 'featuredImage' srcset sizes}}
+                     {{/if}}
+                     {{ lazyload "eager" }}
+                     height="{{height}}"
+                     width="{{width}}"
+                     alt="{{alt}}">                             
+                  {{#checkIfAny caption credits}}
+                     <figcaption>
+                        {{caption}}
+                        {{credits}}
+                     </figcaption>
+                  {{/checkIfAny}}
+               </figure>
+            {{/if}}
+         {{/featuredImage}}
+      {{/if}}
+      <div class="post__entry">
+         {{#if @config.custom.lazyLoad}}
+            {{{lazyLoadForContentImages text @config.custom.lazyLoadEffect}}}
+         {{else}}
+            {{{text}}}
+         {{/if}}
+      </div>
+      {{#checkIfAny postViewConfig.displayDate postViewConfig.displayAuthor postViewConfig.displayUpdatedDate postViewConfig.displayTags postViewConfig.displayAuthorBio}}
+         <footer>
+            {{#checkIfAny postViewConfig.displayDate postViewConfig.displayAuthor postViewConfig.displayUpdatedDate}}
+               <div class="post__footer-top">
+                  {{#checkIfAny postViewConfig.displayDate postViewConfig.displayAuthor postViewConfig.displayUpdatedDate}}
+                     <div class="post__meta">
+                        {{#if postViewConfig.displayDate}}
+
+                           <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                              {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                 {{date createdAt @config.custom.formatDate}}
+                              {{else}}
+                                 {{date createdAt @config.custom.formatDateCustom}}
+                              {{/checkIf}}
+                           </time>
+
+                        {{/if}}
+                        {{#if postViewConfig.displayAuthor}}
+                           {{#author}}
+
+                              {{ translate 'post.publishedBy' }}
+
+                              <a href="{{url}}" rel="author" title="{{name}}">
+                                 {{name}}
+                              </a>
+
+                           {{/author}}
+                        {{/if}}
+                        {{#if postViewConfig.displayUpdatedDate}}
+                           <span>
+                              {{ translate 'post.updated' }}
+
+                              <time datetime="{{date modifiedAt 'YYYY-MM-DDTHH:mm'}}">
+                                 {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                    {{date modifiedAt @config.custom.formatDate}}
+                                 {{else}}
+                                    {{date modifiedAt @config.custom.formatDateCustom}}
+                                 {{/checkIf}}
+                              </time>
+                           </span>
+                        {{/if}}
+
+                     </div>
+                  {{/checkIfAny}}
+                  
+               </div>
+            {{/checkIfAny}}
+            {{#checkIfAny postViewConfig.displayTags postViewConfig.displayAuthorBio}}
+               <div class="post__footer-bottom">
+                  {{#if postViewConfig.displayTags}}
+                     {{#if tags}}
+                        <ul class="post__tag">
+                           {{#each tags}}
+                              <li>
+                                 <a href="{{url}}">
+                                    {{name}}
+                                 </a>
+                              </li>
+                           {{/each}}
+                        </ul>
+                     {{/if}}
+                  {{/if}}
+
+                  {{#if postViewConfig.displayAuthorBio}}
+                     <div class="post__bio">
+                        {{#author}}
+                           {{#if avatar}}
+                              <img 
+                                 src="{{avatarImage.url}}" 
+                                 {{ lazyload "lazy" }}
+                                 height="{{avatarImage.height}}"
+                                 width="{{avatarImage.width}}"
+                                 alt="{{avatarImage.alt}}">
+                           {{/if}}
+                           <div>
+                              <a href="{{url}}">
+                                 <strong>{{name}}</strong>
+                              </a>
+                              {{{description}}}
+                           </div>
+                        {{/author}}
+                     </div>
+                  {{/if}}
+               </div>
+            {{/checkIfAny}}
+         </footer>
+      {{/checkIfAny}}
+       
+      {{#if postViewConfig.displayComments}}
+         <div class="post-comments" id="post-comments">                    
+           {{{@commentsCustomCode}}}
+         </div>
+      {{/if}}
+       
+   </article>  
+
+{{/getPost}}

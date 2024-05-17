@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="{{ @website.language }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{#if title}}
+            <title>{{title}}</title>
+        {{else}}
+            <title>{{@website.name}}</title>
+        {{/if}}
+        {{metaDescription}}
+        {{metaRobots}}
+        {{{publiiHead}}}
+        {{canonicalLink}}
+        {{feedLink}}
+        {{socialMetaTags}}
+		{{#if @config.custom.faviconUpload}}
+	        <link rel="shortcut icon" href="{{@config.custom.faviconUpload}}" type="{{@config.custom.faviconExtension}}" />
+        {{/if}}
+        {{#if @pagination}}
+            {{#if @pagination.previousPage}}
+                <link rel="prev" href="{{@pagination.previousPageUrl }}">
+            {{/if}}
+            {{#if @pagination.nextPage}}
+                <link rel="next" href="{{@pagination.nextPageUrl }}">
+            {{/if}}
+        {{/if}}   
+        {{> fonts}}
+        <link rel="stylesheet" href="{{css "style.css" }}">
+        {{#is "post"}}
+           {{#post}}
+              {{#if hasGallery}}
+                 <link rel="stylesheet" href="{{css "photoswipe.css" }}">
+              {{/if}}
+           {{/post}}
+        {{/is}}
+		{{#if @config.custom.frontPost}}
+           {{#checkIf @config.custom.frontGallery '==' true}}
+              {{#is "index"}}
+                 <link rel="stylesheet" href="{{css "photoswipe.css" }}">
+              {{/is}}
+           {{/checkIf}}
+        {{/if}}	        
+        {{jsonLD}}
+	    {{#is "post"}}
+           {{#post}}
+              {{#if hasGallery}}
+		            <style>				
+		               {{#checkIf @config.custom.galleryLightboxStyle '==' "pswp--dark" }}
+				          .pswp--svg .pswp__button,
+				          .pswp--svg .pswp__button--arrow--left:before,
+				          .pswp--svg .pswp__button--arrow--right:before {
+					          background-image: url({{@website.assetsUrl}}/svg/gallery-icons-light.svg);
+			              }
+		              {{else}}
+			              .pswp--svg .pswp__button,
+				          .pswp--svg .pswp__button--arrow--left:before,
+				          .pswp--svg .pswp__button--arrow--right:before {
+					          background-image: url({{@website.assetsUrl}}/svg/gallery-icons-dark.svg);
+			              }		
+		              {{/checkIf}}
+		            </style>		        
+              {{/if}}
+           {{/post}}
+        {{/is}}
+        
+        {{#if @config.custom.frontPost}}
+          {{#checkIf @config.custom.frontGallery '==' true}}
+            {{#is "index"}}
+               <style>	
+		            {{#checkIf @config.custom.galleryLightboxStyle '==' "pswp--dark" }}
+		                 .pswp--svg .pswp__button,
+		                 .pswp--svg .pswp__button--arrow--left:before,
+		                 .pswp--svg .pswp__button--arrow--right:before {
+			                background-image: url({{@website.assetsUrl}}/svg/gallery-icons-light.svg);
+		                 }
+		            {{else}}
+		                 .pswp--svg .pswp__button,
+		                 .pswp--svg .pswp__button--arrow--left:before,
+		                 .pswp--svg .pswp__button--arrow--right:before {
+			                background-image: url({{@website.assetsUrl}}/svg/gallery-icons-dark.svg);
+		                 }		
+		            {{/checkIf}}
+               </style>	
+            {{/is}}	
+          {{/checkIf}}
+        {{/if}} 
+        <noscript>
+            <style>
+                img[loading] {
+                    opacity: 1;
+                }
+            </style>
+        </noscript>
+        {{{@headCustomCode}}}
+        {{#if @config.custom.docSearchSupport}}
+            <style>:root{--docsearch-primary-color:{{@config.custom.primaryColor}};}.DocSearch-Container{z-index:2000!important}.DocSearch-Cancel{width:auto!important;background:var(--primary-color)!important;border:0;border-radius:2px!important;-webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.05),0 1px 5px 0 rgba(0,0,0,0.12)!important;box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.05),0 1px 5px 0 rgba(0,0,0,0.12)!important;color:var(--white)!important;cursor:pointer!important;font-size:.8239746086rem!important;font-weight:var(--font-weight-bold)!important;letter-spacing:.03em!important;padding:.6666666667rem 1.3333333333rem!important}#docsearch{width:100%}.DocSearch-Button{background:transparent!important;border:none!important;box-shadow:none!important;height:43px!important;margin-left:0!important;width:100%!important;transform:none!important}
+            </style>
+        {{/if}}
+    </head>
+    <body>
+        {{{@bodyCustomCode}}}

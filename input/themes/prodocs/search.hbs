@@ -1,0 +1,20 @@
+{{> head}}
+{{> top}}
+<main class="main page page--search">
+   <div class="main__left">
+      <div class="main__left-inner">
+         <div class="main__left-content">
+            <article>
+               <header class="page__header">
+                  <h1 class="page__title">
+                     {{ translate 'search.pagetitle' }}
+                  </h1>                  
+               </header>
+               {{{@customSearchContent}}} 
+            </article>
+         </div>
+      </div>
+   </div>
+   {{> sidebar}}
+</main>
+{{> footer}}

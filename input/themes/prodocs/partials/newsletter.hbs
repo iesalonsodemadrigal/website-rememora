@@ -1,0 +1,12 @@
+<div class="newsletter-popup" 
+     {{#if @config.custom.newsletterScroll }} 
+         data-show-on-scroll="{{ @config.custom.newsletterScrollDistance }}" 
+     {{/if}}
+     {{#if @config.custom.newsletterTime }} 
+         data-show-after-time="{{ @config.custom.newsletterTimeLength }}" 
+     {{/if}}>
+    <button class="btn white newsletter-popup__close">&times;</button>
+    <h3>{{ translate 'partials.newsletter.title' }}</h3>
+    <p>{{ translate 'partials.newsletter.description' }}</p>
+    {{{@config.custom.newsletterFormCode}}}
+</div>

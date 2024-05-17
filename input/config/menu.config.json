@@ -1,0 +1,155 @@
+[
+    {
+        "name": "MainMenu",
+        "position": "sidebarMenu",
+        "items": [
+            {
+                "id": 1715873703285,
+                "label": "Introducción",
+                "title": "",
+                "type": "post",
+                "target": "_self",
+                "rel": "",
+                "link": 1,
+                "cssClass": "",
+                "isHidden": false,
+                "items": [
+                    {
+                        "id": 1715880577352,
+                        "label": "Resumen",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 7,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1715878124925,
+                        "label": "Motivación",
+                        "title": "motivación de la investigación",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 2,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1715878143859,
+                        "label": "Contexto",
+                        "title": "Contexto de la investigación",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 3,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1715878168238,
+                        "label": "Hipótesis y objetivos",
+                        "title": "hipótesis y objetivos de la investigación",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 4,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "id": 1715934727218,
+                "label": "Marco teórico",
+                "title": "",
+                "type": "post",
+                "target": "_self",
+                "rel": "",
+                "link": 11,
+                "cssClass": "",
+                "isHidden": false,
+                "items": []
+            },
+            {
+                "id": 1715878588524,
+                "label": "Metodología",
+                "title": "",
+                "type": "post",
+                "target": "_self",
+                "rel": "",
+                "link": 5,
+                "cssClass": "",
+                "isHidden": false,
+                "items": [
+                    {
+                        "id": 1715879050499,
+                        "label": "Diseño",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 6,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1715934457854,
+                        "label": "Participantes",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 8,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1715934473295,
+                        "label": "Variables",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 9,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1715934486570,
+                        "label": "Instrumentos",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 10,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "id": 1715935128951,
+                "label": "Desarrollo de la App",
+                "title": "",
+                "type": "post",
+                "target": "_self",
+                "rel": "",
+                "link": 12,
+                "cssClass": "",
+                "isHidden": false,
+                "items": []
+            }
+        ],
+        "maxLevels": "-1"
+    }
+]

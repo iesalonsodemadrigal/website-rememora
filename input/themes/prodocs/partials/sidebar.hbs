@@ -1,0 +1,20 @@
+<div class="main__right">
+   <div class="main__right-inner">
+
+      {{#if menus.sidebarMenu}}
+         {{> menu menus.sidebarMenu}}
+      {{/if}}
+
+      <div class="footer main__right-footer">
+         {{#if menus.footerMenu}}
+            <ul class="footer__nav">
+               {{> simple-menu menus.footerMenu}}
+            </ul>
+         {{/if}}
+         <div class="footer__copy">
+            {{{@config.custom.copyrightText}}}
+         </div>
+      </div>
+
+   </div>
+</div>

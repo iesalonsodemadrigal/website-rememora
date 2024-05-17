@@ -1,0 +1,18 @@
+{{#each items}}
+   <li{{menuItemClasses}}>
+      {{#if link}}
+         <a href="{{menuUrl}}" class="invert" {{#if title}} title="{{title}}" {{/if}}>
+            {{label}}
+         </a>
+         {{else}}
+         <span{{#if title}} title="{{title}}" {{/if}}>
+            {{label}}
+         </span>
+      {{/if}}
+      {{#if items}}
+         <ul>
+            {{> simple-menu}}
+         </ul>
+      {{/if}}
+   </li>
+{{/each}}

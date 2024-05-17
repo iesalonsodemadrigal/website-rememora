@@ -1,0 +1,27 @@
+{{> head}}
+{{> top}}
+<main class="main page page--error">
+   <div class="main__left">
+      <div class="main__left-inner">
+         <div class="main__left-content">
+            <article>
+               <header class="page__header">
+                  <h1 class="page__title">
+                     {{ translate 'error.404' }}
+                  </h1>
+
+                  <p class="page__desc">
+                     {{ translate 'error.message' }}
+                  </p>
+               </header>
+               <p>
+                  <a href="{{@website.url}}" class="btn">
+                     {{ translate 'error.button' }}</a>
+               </p>
+            </article>
+         </div>
+      </div>
+   </div>
+   {{> sidebar}}
+</main>
+{{> footer}}

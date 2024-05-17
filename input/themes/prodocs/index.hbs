@@ -1,0 +1,161 @@
+{{> head}}
+{{> top}}
+<main class="main">
+   <div class="main__left">
+      <div class="main__left-inner">
+         <div class="main__left-content">
+            {{#if @renderer.isFirstPage}}
+               {{> frontpage-post}}
+            {{/if}}
+            {{#if @renderer.isFirstPage}}
+               {{#if @config.custom.frontFeaturedArticles}}
+                  {{#if featuredPosts}}
+                     <section class="listing">
+                        <h2 class="h3">{{ translate 'common.featuredArticles' }}</h2>
+                        <ul class="list">
+                           {{#each featuredPosts}}
+                              <li class="list__item {{#checkIfNone @config.custom.listingFrontExcerpt}}list__item--thin{{/checkIfNone}}">
+                                 <h3 class="list__item-title">
+                                    <a href="{{url}}" class="invert">
+                                       {{title}}
+                                    </a>
+                                 </h3>
+                                 <div class="list__item-meta">
+                                    {{#if @config.custom.listingFrontDate}}
+                                       <span>
+                                          {{ translate 'post.published' }}
+                                          <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                                             {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                                {{date createdAt @config.custom.formatDate}}
+                                             {{else}}
+                                                {{date createdAt @config.custom.formatDateCustom}}
+                                             {{/checkIf}}
+                                          </time>
+                                       </span>
+                                    {{/if}}
+
+                                    {{#if @config.custom.listingFrontCategory}}
+                                       {{#if mainTag}}
+                                          <a href="{{mainTag.url}}" class="invert">{{mainTag.name}}</a>
+                                       {{/if}}
+                                    {{/if}}
+
+                                    {{#if @config.custom.listingFrontUpdate}}
+                                       <span>
+                                          {{ translate 'post.updated' }}
+                                          <time datetime="{{date modifiedAt 'YYYY-MM-DDTHH:mm'}}">
+                                             {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                                {{date modifiedAt @config.custom.formatDate}}
+                                             {{else}}
+                                                {{date modifiedAt @config.custom.formatDateCustom}}
+                                             {{/checkIf}}
+                                          </time>
+                                       </span>
+                                    {{/if}}
+
+                                    {{#if @config.custom.listingFrontAuthor}}
+                                       {{#author}}
+                                          <a href="{{url}}" class="invert">{{name}}</a>
+                                       {{/author}}
+                                    {{/if}}
+
+                                 </div>
+
+                                 {{#if @config.custom.listingFrontExcerpt}}
+                                    {{#if hasCustomExcerpt}}
+                                       {{{ excerpt }}}
+                                    {{else}}
+                                       <p class="list__item-excerpt">{{{ excerpt }}}</p>
+                                    {{/if}}
+                                 {{/if}}
+
+                              </li>
+                           {{/each}}
+                        </ul>
+                     </section>
+                  {{/if}}
+               {{/if}}
+            {{/if}}
+            {{#if @config.custom.frontLatestArticles}}
+               <section class="listing">
+                  <h2 class="h3">{{ translate 'common.recentArticles' }}</h2>
+                  <ul class="list">
+                     {{#each posts}}
+                        <li class="list__item {{#checkIfNone @config.custom.listingFrontExcerpt}}list__item--thin{{/checkIfNone}}">
+                           <h3 class="list__item-title">
+                              <a href="{{url}}" class="invert">
+                                 {{title}}
+                              </a>
+                           </h3>
+                           <div class="list__item-meta">
+
+                              {{#if @config.custom.listingFrontDate}}
+                                 <span>
+                                    {{ translate 'post.published' }}
+                                    <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                                       {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                          {{date createdAt @config.custom.formatDate}}
+                                       {{else}}
+                                          {{date createdAt @config.custom.formatDateCustom}}
+                                       {{/checkIf}}
+                                    </time>
+                                 </span>
+                              {{/if}}
+
+                              {{#if @config.custom.listingFrontCategory}}
+                                 {{#if mainTag}}
+                                    <a href="{{mainTag.url}}" class="invert">{{mainTag.name}}</a>
+                                 {{/if}}
+                              {{/if}}
+
+                              {{#if @config.custom.listingFrontUpdate}}
+                                 <span>
+                                    {{ translate 'post.updated' }}
+                                    <time datetime="{{date modifiedAt 'YYYY-MM-DDTHH:mm'}}">
+                                       {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                          {{date modifiedAt @config.custom.formatDate}}
+                                       {{else}}
+                                          {{date modifiedAt @config.custom.formatDateCustom}}
+                                       {{/checkIf}}
+                                    </time>
+                                 </span>
+                              {{/if}}
+
+                              {{#if @config.custom.listingFrontAuthor}}
+                                 {{#author}}
+                                    <a href="{{url}}" class="invert">{{name}}</a>
+                                 {{/author}}
+                              {{/if}}
+
+                           </div>
+
+                           {{#if @config.custom.listingFrontExcerpt}}
+                              {{#if hasCustomExcerpt}}
+                                 {{{ excerpt }}}
+                              {{else}}
+                                 <p class="list__item-excerpt">{{{ excerpt }}}</p>
+                              {{/if}}
+                           {{/if}}
+
+                        </li>
+                     {{/each}}
+                  </ul>
+               </section>
+               {{> pagination}}
+            {{/if}}
+         </div>
+         {{#getPost @config.custom.frontPost}}
+            {{#if postViewConfig.displayToc}}
+               <aside class="main__left-aside">
+                  <div class="main__left-aside__inner">
+                     <h3>{{ translate 'post.tocLabel' }}</h3>
+                     <nav class="aside-toc" id="aside-toc"></nav>
+                  </div>
+               </aside>
+            {{/if}}
+         {{/getPost}}
+      </div>
+   </div>
+   {{> sidebar}}
+</main>
+{{> footer}}
