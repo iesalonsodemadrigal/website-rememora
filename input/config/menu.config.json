@@ -232,6 +232,30 @@
                         "cssClass": "",
                         "isHidden": false,
                         "items": []
+                    },
+                    {
+                        "id": 1717001752188,
+                        "label": "Versión 4 con IAG",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 22,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1717004111688,
+                        "label": "Análisis de los resultados",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 23,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
                     }
                 ]
             },
