@@ -2,12 +2,12 @@
     "uuid": "uuid-1714492975636-519636727",
     "name": "rememora",
     "displayName": "Rememora",
-    "synced": false,
+    "synced": "synced",
     "logo": {
         "color": 1,
         "icon": "web-file-text"
     },
-    "domain": "",
+    "domain": "https://siadenlab.iesalonsodemadrigal.es/rememora",
     "language": "es",
     "spellchecking": false,
     "advanced": {
@@ -161,7 +161,7 @@
         }
     },
     "deployment": {
-        "protocol": "",
+        "protocol": "git",
         "relativeUrls": false,
         "port": "",
         "server": "",
@@ -185,13 +185,13 @@
             "acl": "public-read"
         },
         "git": {
-            "url": "",
-            "branch": "",
-            "user": "",
-            "password": "",
-            "commitAuthor": "",
-            "commitEmail": "",
-            "commitMessage": "Publii: update content"
+            "url": "https://github.com/iesalonsodemadrigal/website-rememora.git",
+            "branch": "gh-pages",
+            "user": "jmperezra",
+            "password": "publii-git-password uuid-1714492975636-519636727",
+            "commitAuthor": "chema",
+            "commitEmail": "josem.perram@educa.jcyl.es",
+            "commitMessage": "Publii: release version"
         },
         "github": {
             "server": "api.github.com",
@@ -223,5 +223,6 @@
             "outputDirectory": ""
         }
     },
-    "theme": "prodocs"
+    "theme": "prodocs",
+    "syncDate": 1716938054480
 }

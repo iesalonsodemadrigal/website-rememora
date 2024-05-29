@@ -7,10 +7,10 @@
                 "id": 1715873703285,
                 "label": "Introducción",
                 "title": "",
-                "type": "post",
+                "type": "frontpage",
                 "target": "_self",
                 "rel": "",
-                "link": 1,
+                "link": "empty",
                 "cssClass": "",
                 "isHidden": false,
                 "items": [
@@ -134,6 +134,18 @@
                         "cssClass": "",
                         "isHidden": false,
                         "items": []
+                    },
+                    {
+                        "id": 1716299139643,
+                        "label": "Procedimiento",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 16,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
                     }
                 ]
             },
@@ -145,6 +157,104 @@
                 "target": "_self",
                 "rel": "",
                 "link": 12,
+                "cssClass": "",
+                "isHidden": false,
+                "items": [
+                    {
+                        "id": 1716929920560,
+                        "label": "Desarrollo Interfaz de Usuario",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 17,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1716931449933,
+                        "label": "Validación",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 18,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "id": 1715938171841,
+                "label": "Fase I: IU con IA",
+                "title": "",
+                "type": "post",
+                "target": "_self",
+                "rel": "",
+                "link": 13,
+                "cssClass": "",
+                "isHidden": false,
+                "items": [
+                    {
+                        "id": 1716932912086,
+                        "label": "Versión 1 sin IAG",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 19,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1716934544529,
+                        "label": "Versión 2 con IAG",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 20,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    },
+                    {
+                        "id": 1716937386786,
+                        "label": "Versión 3 con IAG",
+                        "title": "",
+                        "type": "post",
+                        "target": "_self",
+                        "rel": "",
+                        "link": 21,
+                        "cssClass": "",
+                        "isHidden": false,
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "id": 1715938266915,
+                "label": "Fase II: IU con Voz e IA",
+                "title": "",
+                "type": "post",
+                "target": "_self",
+                "rel": "",
+                "link": 14,
+                "cssClass": "",
+                "isHidden": false,
+                "items": []
+            },
+            {
+                "id": 1715938313172,
+                "label": "Fase III: Emociones con IA",
+                "title": "",
+                "type": "post",
+                "target": "_self",
+                "rel": "",
+                "link": 15,
                 "cssClass": "",
                 "isHidden": false,
                 "items": []
