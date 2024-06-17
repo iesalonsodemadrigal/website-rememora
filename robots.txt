@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://siadenlab.iesalonsodemadrigal.es/rememora/sitemap.xml
